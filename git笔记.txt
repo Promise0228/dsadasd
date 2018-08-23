@@ -1,0 +1,84 @@
+SVN冲突: 避免冲突     及时提交.更新
+
+
+
+Git:版本控制软件
+分布式版本控制软件
+
+
+命令:
+git add :将本地文件添加到暂存区
+git commit :将暂存区的文件提交到本地仓库
+git push : 将本地仓库文件推送到远程仓库
+git pull : 将远程仓库文件下载到本地仓库
+
+
+安装Git
+msysgit.github.io
+安装时: Use git from git bash only..
+
+配置git:
+右键-git bash
+用户名:$ git config --global user.name "zs"
+邮箱:$ git config --global user.email "961299684@qq.com"
+
+查看:C:\Users\Administrator/.gitconfig
+
+
+搭建git服务器(远程仓库):统一的托管网站(https://github.com)
+
+本地生成ssh
+ssh-keygen -t rsa -C 961299684@qq.com 一直回车
+发送给远程仓库:
+github - settings - SSH and ... - New SSH -  title 任意 ,key中输入 刚才本地生成的id_rsa.pub中的内容复制到key中
+
+测试连通性:
+ssh -T git@qq.com
+如果本地与远程成功通信我 则可以在C:\Users\Administrator\.ssh 发现known_hosts文件
+如果失败:多试几次,检查key中是否有回车符或空格符等
+
+
+本地新建git项目:
+初始化:项目根目录 右键 - git bash - git init
+
+新建远程git项目:
+new - 建立项目 - 生成https://github.com/Promise0228/mygit.git
+
+
+本地项目关联远程项目:
+git remote add origin 
+https://github.com/Promise0228/Test.git(命令)
+
+
+第一次发布项目(本地-远程)
+git add .    本地发送暂存区
+git commit -m "第一次发布项目"    暂存区-本地分支(默认master)
+git push -u origin master
+
+第一次下载项目(远程-本地)
+git clone git@github.com:Promise0228/Test.git
+
+提交(远程-本地)
+git add .    本地发送暂存区
+git commit -m "提交"    暂存区-本地分支(默认master)
+git push origin master
+
+
+更新(远程-本地)
+git pull
+
+
+Egit(在eclipse中操作git):
+目前eclipse基本支持git 如果不支持 则到eclipse - marktplace 搜git在线安装 重启eclipse
+配置:
+1.team - git - configuration - 配置邮箱用户名
+2.general - neckwork - ssh2 选中ssh目录
+
+第一次发布
+
+
+
+
+
+
+
